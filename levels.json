@@ -1,0 +1,30 @@
+{
+  "modes": {
+    "CLASSIC": {
+      "friction": 0.015,
+      "puckScale": 1.0,
+      "maxSpeed": 18,
+      "gravity": 0,
+      "bg": "#fcfcfc"
+    },
+    "ICE_SLEDGE": {
+      "friction": 0.002,
+      "puckScale": 0.8,
+      "maxSpeed": 25,
+      "gravity": 0,
+      "bg": "#eef9ff"
+    },
+    "SPACE": {
+      "friction": 0.0,
+      "puckScale": 1.2,
+      "maxSpeed": 15,
+      "gravity": 0.05,
+      "bg": "#0a0a1a"
+    }
+  },
+  "opponents": [
+    { "id": "EASY", "name": "Training-Bot", "color": "#39ff14", "aiSpeed": 0.05, "reactionDelay": 15 },
+    { "id": "MEDIUM", "name": "Striker-7", "color": "#ffaa00", "aiSpeed: 0.11", "reactionDelay": 8 },
+    { "id": "HARD", "name": "The Wall", "color": "#ff3300", "aiSpeed": 0.17, "reactionDelay": 0 }
+  ]
+}

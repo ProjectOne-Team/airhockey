@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Pro Airhockey - Ultimate PWA</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AirHockey">
+    
+    <meta name="theme-color" content="#222222">
+
+    <script>
+        // Service Worker Registrierung
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log("PWA: Service Worker aktiv"))
+                    .catch(err => console.log("PWA: Fehler", err));
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <div id="startMenu">
+        <div class="menu-content">
+            <h1>PRO AIR HOCKEY</h1>
+            
+            <div class="menu-section">
+                <h3>WÄHLE DEINEN GEGNER</h3>
+                <div id="opponentList" class="button-grid"></div>
+            </div>
+
+            <div class="menu-section">
+                <h3>SPIEL-MODUS</h3>
+                <div id="modeList" class="button-grid"></div>
+            </div>
+
+            <button id="startButton" onclick="startGame()">SPIEL STARTEN</button>
+        </div>
+    </div>
+    
+    <div id="game-container">
+        <canvas id="hockeyCanvas" width="400" height="600"></canvas>
+    </div>
+
+    <script type="module" src="game.js"></script>
+</body>
+</html>
